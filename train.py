@@ -456,8 +456,7 @@ def train(hyp, opt, device, tb_writer=None):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     # 权重的位置  –weihts加载预训练模型的路径
-    #parser.add_argument('--weights', type=str, default='./weights/yolov5s.pt', help='initial weights path')
-    parser.add_argument('--weights', type=str, default='./runs/train/exp3/weights/last.pt', help='initial weights path')
+    parser.add_argument('--weights', type=str, default='./weights/yolov5s.pt', help='initial weights path')
     # --cfg设置网络结构的配置文件
     parser.add_argument('--cfg', type=str, default='./models/yolov5s.yaml', help='model.yaml path')
     # --data指定训练数据文件
@@ -467,8 +466,7 @@ if __name__ == '__main__':
     parser.add_argument('--batch-size', type=int, default=32, help='total batch size for all GPUs')
     parser.add_argument('--img-size', nargs='+', type=int, default=[640, 640], help='[train, test] image sizes')
     parser.add_argument('--rect', action='store_true', help='rectangular training')
-    parser.add_argument('--resume', nargs='?', const=True, default=True, help='resume most recent training')
-    #parser.add_argument('--resume', nargs='?', const=True, default=False, help='resume most recent training')
+    parser.add_argument('--resume', nargs='?', const=True, default=False, help='resume most recent training')
     parser.add_argument('--nosave', action='store_true', help='only save final checkpoint')
     parser.add_argument('--notest', action='store_true', help='only test final epoch')
     parser.add_argument('--noautoanchor', action='store_true', help='disable autoanchor check')
